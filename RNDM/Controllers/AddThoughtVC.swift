@@ -43,14 +43,10 @@ class AddThoughtVC: UIViewController {
                 USERNAME : username,
                 TIMESTAMP : FieldValue.serverTimestamp()
                 ]
-            
             DataService.instance.addDocument(userData: thoughtDictionaryData) { (uploadComplete) in
                 if uploadComplete{
                     // successful
-                    self.categorySegmentedControl.selectedSegmentIndex = 0
-                    self.thoughtTextView.text = "Enter your thought..."
-                    self.thoughtTextView.textColor = UIColor.lightGray
-                    self.usernameTxtField.text = ""
+                    self.navigationController?.popViewController(animated: true)
                 }else{
                     debugPrint("error uploading the document")
                 }

@@ -15,12 +15,59 @@ class MainVc: UIViewController {
     @IBOutlet weak var thoughtsTV: UITableView!
     
     // MARK:- Variables
-    private let thoughtsArr = [Thought]()
+    private var thoughtsArr = [Thought]()
+    private var categorySelected = Categories.funny.rawValue
     
     override func viewDidLoad() {
         super.viewDidLoad()
         thoughtsTV.estimatedRowHeight = 80
         thoughtsTV.rowHeight = UITableView.automaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setListeners()
+    }
+    
+    // good practise to remove listener when we are not using it
+    override func viewWillDisappear(_ animated: Bool) {
+        DataService.instance.removeListener()
+    }
+    
+    func setListeners(){
+        DataService.instance.getAllDocuments(category: self.categorySelected) { (thoughts, error) in
+            if let err = error{
+                debugPrint(err.localizedDescription)
+            }else{
+                guard let arr = thoughts else { return }
+                self.thoughtsArr = arr
+                self.thoughtsTV.reloadData()
+            }
+        }
+    }
+    
+    // MARK:- Actions
+    
+    @IBAction func categoryChanged(_ sender: Any) {
+        switch categorySegment.selectedSegmentIndex {
+        case 0:
+            self.categorySelected = Categories.funny.rawValue
+            break
+            
+        case 1:
+            self.categorySelected = Categories.serious.rawValue
+            break
+            
+        case 2:
+            self.categorySelected = Categories.crazy.rawValue
+            break
+
+        default:
+            self.categorySelected = Categories.popular.rawValue
+            break
+        }
+        
+        DataService.instance.removeListener() // to avoid multiple listeners
+        setListeners()
     }
 }
 

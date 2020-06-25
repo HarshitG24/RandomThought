@@ -16,10 +16,14 @@ class ThoughtCell: UITableViewCell {
     @IBOutlet weak var likes: UILabel!
     
     func configureCell(thought: Thought){
-        self.likes.text = "\(String(describing: thought.numLikes))"
+        self.likes.text = String(thought.numLikes)
         self.username.text = thought.username
         self.thoughttxt.text = thought.thoughtTxt
-        self.timestamp.text = "\(String(describing: thought.timestamp))"
+      
+        let formatter =  DateFormatter()
+        formatter.dateFormat = "MMM d, hh:mm"
+        let timestmp = formatter.string(from: thought.timestamp)
+        timestamp.text = timestmp
     }
 
 }
