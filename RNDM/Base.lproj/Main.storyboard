@@ -96,6 +96,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="likes" destination="Itu-qo-tS7" id="GIi-8T-diJ"/>
+                                            <outlet property="likesImg" destination="zP1-qR-cnh" id="vcO-G3-Xfh"/>
                                             <outlet property="thoughttxt" destination="ML4-fr-j7M" id="bNF-oV-yeQ"/>
                                             <outlet property="timestamp" destination="JuE-cJ-d3b" id="yB0-3P-2IE"/>
                                             <outlet property="username" destination="Ja5-cR-c8k" id="hr5-Rc-fr4"/>

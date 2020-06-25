@@ -45,6 +45,18 @@ class MainVc: UIViewController {
         }
     }
     
+    func getPopularThoughts(){
+        DataService.instance.getPopularDocuments { (thoughts, error) in
+            if let err = error{
+                debugPrint(err.localizedDescription)
+            }else{
+                guard let arr = thoughts else { return }
+                self.thoughtsArr = arr
+                self.thoughtsTV.reloadData()
+            }
+        }
+    }
+    
     // MARK:- Actions
     
     @IBAction func categoryChanged(_ sender: Any) {
@@ -67,7 +79,7 @@ class MainVc: UIViewController {
         }
         
         DataService.instance.removeListener() // to avoid multiple listeners
-        setListeners()
+        Categories.popular.rawValue == self.categorySelected ? getPopularThoughts() : setListeners()
     }
 }
 
