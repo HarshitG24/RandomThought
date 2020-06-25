@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		E92F148EAF68E6072EBC5439 /* libPods-RNDM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3355594C8BB2901B413FEA31 /* libPods-RNDM.a */; };
 		EE4E9E2C24A4CA73006B59D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE4E9E2B24A4CA73006B59D4 /* GoogleService-Info.plist */; };
+		EE4E9E3124A4E39F006B59D4 /* AddThoughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E9E3024A4E39F006B59D4 /* AddThoughtVC.swift */; };
+		EE4E9E3424A4E907006B59D4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E9E3324A4E907006B59D4 /* DataService.swift */; };
+		EE4E9E3724A4F03B006B59D4 /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E9E3624A4F03B006B59D4 /* enum.swift */; };
+		EE4E9E3A24A4F264006B59D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E9E3924A4F264006B59D4 /* Constants.swift */; };
 		EEFCE56124A4C1C600F2FFC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFCE56024A4C1C600F2FFC1 /* AppDelegate.swift */; };
 		EEFCE56324A4C1C600F2FFC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFCE56224A4C1C600F2FFC1 /* SceneDelegate.swift */; };
-		EEFCE56524A4C1C600F2FFC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFCE56424A4C1C600F2FFC1 /* ViewController.swift */; };
+		EEFCE56524A4C1C600F2FFC1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFCE56424A4C1C600F2FFC1 /* MainVC.swift */; };
 		EEFCE56824A4C1C600F2FFC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFCE56624A4C1C600F2FFC1 /* Main.storyboard */; };
 		EEFCE56A24A4C1C700F2FFC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEFCE56924A4C1C700F2FFC1 /* Assets.xcassets */; };
 		EEFCE56D24A4C1C700F2FFC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFCE56B24A4C1C700F2FFC1 /* LaunchScreen.storyboard */; };
@@ -21,10 +25,14 @@
 		0FBE1635D6E5CA15830C0181 /* Pods-RNDM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.release.xcconfig"; path = "Target Support Files/Pods-RNDM/Pods-RNDM.release.xcconfig"; sourceTree = "<group>"; };
 		3355594C8BB2901B413FEA31 /* libPods-RNDM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNDM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4E9E2B24A4CA73006B59D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EE4E9E3024A4E39F006B59D4 /* AddThoughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThoughtVC.swift; sourceTree = "<group>"; };
+		EE4E9E3324A4E907006B59D4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		EE4E9E3624A4F03B006B59D4 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
+		EE4E9E3924A4F264006B59D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EEFCE55D24A4C1C600F2FFC1 /* RNDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFCE56024A4C1C600F2FFC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEFCE56224A4C1C600F2FFC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EEFCE56424A4C1C600F2FFC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EEFCE56424A4C1C600F2FFC1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		EEFCE56724A4C1C600F2FFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEFCE56924A4C1C700F2FFC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEFCE56C24A4C1C700F2FFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +69,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE4E9E2D24A4DE60006B59D4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEFCE56424A4C1C600F2FFC1 /* MainVC.swift */,
+				EE4E9E3024A4E39F006B59D4 /* AddThoughtVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EE4E9E2E24A4DE73006B59D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE4E9E2F24A4DE78006B59D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE4E9E3224A4E8FA006B59D4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EE4E9E3324A4E907006B59D4 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EE4E9E3524A4F032006B59D4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				EE4E9E3624A4F03B006B59D4 /* enum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		EE4E9E3824A4F25B006B59D4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EE4E9E3924A4F264006B59D4 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		EEFCE55424A4C1C600F2FFC1 = {
 			isa = PBXGroup;
 			children = (
@@ -82,9 +137,14 @@
 		EEFCE55F24A4C1C600F2FFC1 /* RNDM */ = {
 			isa = PBXGroup;
 			children = (
+				EE4E9E3824A4F25B006B59D4 /* Utilities */,
+				EE4E9E3524A4F032006B59D4 /* Enums */,
+				EE4E9E3224A4E8FA006B59D4 /* Services */,
+				EE4E9E2F24A4DE78006B59D4 /* Model */,
+				EE4E9E2E24A4DE73006B59D4 /* View */,
+				EE4E9E2D24A4DE60006B59D4 /* Controllers */,
 				EEFCE56024A4C1C600F2FFC1 /* AppDelegate.swift */,
 				EEFCE56224A4C1C600F2FFC1 /* SceneDelegate.swift */,
-				EEFCE56424A4C1C600F2FFC1 /* ViewController.swift */,
 				EEFCE56624A4C1C600F2FFC1 /* Main.storyboard */,
 				EEFCE56924A4C1C700F2FFC1 /* Assets.xcassets */,
 				EEFCE56B24A4C1C700F2FFC1 /* LaunchScreen.storyboard */,
@@ -210,9 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEFCE56524A4C1C600F2FFC1 /* ViewController.swift in Sources */,
+				EEFCE56524A4C1C600F2FFC1 /* MainVC.swift in Sources */,
 				EEFCE56124A4C1C600F2FFC1 /* AppDelegate.swift in Sources */,
+				EE4E9E3724A4F03B006B59D4 /* enum.swift in Sources */,
+				EE4E9E3124A4E39F006B59D4 /* AddThoughtVC.swift in Sources */,
+				EE4E9E3A24A4F264006B59D4 /* Constants.swift in Sources */,
 				EEFCE56324A4C1C600F2FFC1 /* SceneDelegate.swift in Sources */,
+				EE4E9E3424A4E907006B59D4 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
