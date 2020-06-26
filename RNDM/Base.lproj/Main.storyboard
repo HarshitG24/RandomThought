@@ -98,11 +98,19 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImage" translatesAutoresizingMaskIntoConstraints="NO" id="VM9-2u-CMI">
+                                                    <rect key="frame" x="386" y="9.5" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="Voe-AH-JFG"/>
+                                                        <constraint firstAttribute="width" constant="24" id="Xcf-U7-PvD"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ML4-fr-j7M" firstAttribute="leading" secondItem="Thj-uN-ooy" secondAttribute="leadingMargin" id="1B8-iG-pgp"/>
                                                 <constraint firstItem="CHi-0j-izl" firstAttribute="centerY" secondItem="sgQ-PF-lJ8" secondAttribute="centerY" id="6eq-ZP-qSu"/>
                                                 <constraint firstItem="JuE-cJ-d3b" firstAttribute="centerY" secondItem="Ja5-cR-c8k" secondAttribute="centerY" id="80F-YL-m8s"/>
+                                                <constraint firstAttribute="trailing" secondItem="VM9-2u-CMI" secondAttribute="trailing" constant="4" id="CJA-Kv-eHZ"/>
                                                 <constraint firstItem="Ja5-cR-c8k" firstAttribute="top" secondItem="Thj-uN-ooy" secondAttribute="topMargin" id="Ij6-Ev-dPO"/>
                                                 <constraint firstItem="Ja5-cR-c8k" firstAttribute="leading" secondItem="Thj-uN-ooy" secondAttribute="leadingMargin" id="J8h-kv-a8A"/>
                                                 <constraint firstItem="ML4-fr-j7M" firstAttribute="top" secondItem="Ja5-cR-c8k" secondAttribute="bottom" constant="8" id="NuK-sB-RVS"/>
@@ -110,6 +118,7 @@
                                                 <constraint firstItem="sgQ-PF-lJ8" firstAttribute="top" secondItem="ML4-fr-j7M" secondAttribute="bottom" constant="4.5" id="Zwv-3X-DuW"/>
                                                 <constraint firstAttribute="bottom" secondItem="sgQ-PF-lJ8" secondAttribute="bottom" constant="7" id="jtR-yX-Oda"/>
                                                 <constraint firstItem="JuE-cJ-d3b" firstAttribute="leading" secondItem="Ja5-cR-c8k" secondAttribute="trailing" constant="8" id="sOF-cQ-Lvn"/>
+                                                <constraint firstItem="VM9-2u-CMI" firstAttribute="centerY" secondItem="JuE-cJ-d3b" secondAttribute="centerY" id="uBI-3X-C1i"/>
                                                 <constraint firstItem="sgQ-PF-lJ8" firstAttribute="leading" secondItem="Thj-uN-ooy" secondAttribute="leading" constant="20" id="vVD-mA-miY"/>
                                                 <constraint firstItem="CHi-0j-izl" firstAttribute="leading" secondItem="sgQ-PF-lJ8" secondAttribute="trailing" constant="12" id="yGN-Ie-eCd"/>
                                             </constraints>
@@ -117,6 +126,7 @@
                                         <connections>
                                             <outlet property="likes" destination="Itu-qo-tS7" id="GIi-8T-diJ"/>
                                             <outlet property="likesImg" destination="zP1-qR-cnh" id="vcO-G3-Xfh"/>
+                                            <outlet property="menuOptions" destination="VM9-2u-CMI" id="p8W-jA-1FW"/>
                                             <outlet property="numCommentslbl" destination="dSg-LJ-BWL" id="BCp-d9-utC"/>
                                             <outlet property="thoughttxt" destination="ML4-fr-j7M" id="bNF-oV-yeQ"/>
                                             <outlet property="timestamp" destination="JuE-cJ-d3b" id="yB0-3P-2IE"/>
@@ -204,9 +214,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImage" translatesAutoresizingMaskIntoConstraints="NO" id="Xzv-cU-Shc">
+                                                    <rect key="frame" x="386" y="10.5" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="EQf-bX-F2U"/>
+                                                        <constraint firstAttribute="height" constant="24" id="apI-El-vKg"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Wv4-Pe-BIC" firstAttribute="leading" secondItem="Wwm-5N-M9e" secondAttribute="trailing" constant="8" id="7eN-EK-gor"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xzv-cU-Shc" secondAttribute="trailing" constant="4" id="EVE-lZ-pNr"/>
                                                 <constraint firstItem="Wv4-Pe-BIC" firstAttribute="centerY" secondItem="Wwm-5N-M9e" secondAttribute="centerY" id="Nht-8a-XpG"/>
                                                 <constraint firstItem="7w3-71-2lw" firstAttribute="top" secondItem="Wwm-5N-M9e" secondAttribute="bottom" constant="8" id="P68-lL-ZZm"/>
                                                 <constraint firstAttribute="trailing" secondItem="7w3-71-2lw" secondAttribute="trailing" constant="20" id="PSU-rI-I2r"/>
@@ -214,10 +232,12 @@
                                                 <constraint firstItem="7w3-71-2lw" firstAttribute="leading" secondItem="Omj-OZ-CaM" secondAttribute="leading" constant="20" id="fJi-vb-1Hg"/>
                                                 <constraint firstAttribute="bottom" secondItem="7w3-71-2lw" secondAttribute="bottom" constant="2" id="h8u-U7-9UF"/>
                                                 <constraint firstItem="Wwm-5N-M9e" firstAttribute="top" secondItem="Omj-OZ-CaM" secondAttribute="top" constant="12" id="p6S-tB-EV7"/>
+                                                <constraint firstItem="Xzv-cU-Shc" firstAttribute="centerY" secondItem="Wv4-Pe-BIC" secondAttribute="centerY" id="t4y-9R-xX5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="comment" destination="7w3-71-2lw" id="9pC-oy-Yqd"/>
+                                            <outlet property="menuOptions" destination="Xzv-cU-Shc" id="v8X-Ep-BJ7"/>
                                             <outlet property="timestamp" destination="Wv4-Pe-BIC" id="e6S-IK-AXJ"/>
                                             <outlet property="username" destination="Wwm-5N-M9e" id="tJo-zB-Ybe"/>
                                         </connections>
@@ -588,6 +608,7 @@
     <resources>
         <image name="addThoughtIcon" width="21" height="24"/>
         <image name="commentIcon" width="26" height="22"/>
+        <image name="optionsImage" width="30" height="30"/>
         <image name="starIconFilled" width="20" height="19"/>
     </resources>
 </document>

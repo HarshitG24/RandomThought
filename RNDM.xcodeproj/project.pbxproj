@@ -22,6 +22,7 @@
 		EE7ADFC024A5F40700102AD6 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7ADFBF24A5F40700102AD6 /* CommentCell.swift */; };
 		EE7ADFC224A6021400102AD6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7ADFC124A6021400102AD6 /* Comment.swift */; };
 		EE7ADFC524A621D300102AD6 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7ADFC424A621D300102AD6 /* UIViewExt.swift */; };
+		EE7ADFC824A6410600102AD6 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7ADFC724A6410600102AD6 /* Protocols.swift */; };
 		EEFCE56124A4C1C600F2FFC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFCE56024A4C1C600F2FFC1 /* AppDelegate.swift */; };
 		EEFCE56324A4C1C600F2FFC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFCE56224A4C1C600F2FFC1 /* SceneDelegate.swift */; };
 		EEFCE56524A4C1C600F2FFC1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFCE56424A4C1C600F2FFC1 /* MainVC.swift */; };
@@ -47,6 +48,7 @@
 		EE7ADFBF24A5F40700102AD6 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		EE7ADFC124A6021400102AD6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		EE7ADFC424A621D300102AD6 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		EE7ADFC724A6410600102AD6 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		EEFCE55D24A4C1C600F2FFC1 /* RNDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFCE56024A4C1C600F2FFC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEFCE56224A4C1C600F2FFC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		EE7ADFC624A640F300102AD6 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				EE7ADFC724A6410600102AD6 /* Protocols.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		EEFCE55424A4C1C600F2FFC1 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 		EEFCE55F24A4C1C600F2FFC1 /* RNDM */ = {
 			isa = PBXGroup;
 			children = (
+				EE7ADFC624A640F300102AD6 /* Protocol */,
 				EE7ADFC324A621C700102AD6 /* Extension */,
 				EE4E9E3824A4F25B006B59D4 /* Utilities */,
 				EE4E9E3524A4F032006B59D4 /* Enums */,
@@ -320,6 +331,7 @@
 				EEFCE56324A4C1C600F2FFC1 /* SceneDelegate.swift in Sources */,
 				EE4E9E3424A4E907006B59D4 /* DataService.swift in Sources */,
 				EE4E9E3C24A4F975006B59D4 /* ThoughtCell.swift in Sources */,
+				EE7ADFC824A6410600102AD6 /* Protocols.swift in Sources */,
 				EE7ADFC024A5F40700102AD6 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

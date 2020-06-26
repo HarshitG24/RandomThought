@@ -41,7 +41,8 @@ class AddThoughtVC: UIViewController {
                 NUM_LIKES: 0,
                 THOUGHT_TXT: txt,
                 USERNAME : username,
-                TIMESTAMP : FieldValue.serverTimestamp()
+                TIMESTAMP : FieldValue.serverTimestamp(),
+                USER_ID: Auth.auth().currentUser?.uid ?? ""
                 ]
             DataService.instance.addDocument(userData: thoughtDictionaryData) { (uploadComplete) in
                 if uploadComplete{

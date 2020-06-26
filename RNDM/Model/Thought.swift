@@ -15,13 +15,15 @@ class Thought{
     private(set) public var timestamp: Date!
     private(set) public var thoughtTxt: String!
     private(set) public var docuemntId: String!
+    private(set) public var userId: String
     
-    init(username: String, like: Int, comment: Int, time: Date, txt: String, id: String) {
+    init(username: String, like: Int, comment: Int, time: Date, txt: String, id: String, uid: String) {
         self.docuemntId = id
         self.numComments = comment
         self.numLikes = like
         self.timestamp = time
         self.username = username
         self.thoughtTxt = txt
+        self.userId = uid
     }
 }

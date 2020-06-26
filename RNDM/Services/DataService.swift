@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 let firestore =  Firestore.firestore()
-let FIRESTORE_REF = firestore.collection("thoughts;")
+let FIRESTORE_REF = firestore.collection("thoughts")
 
 class DataService{
     
@@ -78,7 +78,8 @@ class DataService{
                 comment: data[NUM_COMMENTS] as? Int ?? 0,
                 time: data[TIMESTAMP] as?  Date ?? Date(),
                 txt: data[THOUGHT_TXT] as? String ?? "",
-                id: document.documentID
+                id: document.documentID,
+                uid: data[USER_ID] as? String ?? ""
             )
          
             tgtArr.append(thought)
@@ -94,7 +95,9 @@ class DataService{
             let comment = Comment(
                 username: data[USERNAME] as? String ?? "",
                 time: data[DATE_CREATED] as? Date ?? Date(),
-                txt: data["commentTxt"] as? String ?? ""
+                txt: data["commentTxt"] as? String ?? "",
+                uid: data[USER_ID] as? String ?? "",
+                documentId: document.documentID 
              )
             commentArr.append(comment)
         }
@@ -127,7 +130,15 @@ class DataService{
             
             let newCommentRef = thoughtRef.collection(COMMENTS).document()
             
-            transaction.setData(commentData, forDocument: newCommentRef)
+            let cData: [String: Any] = [
+                "commentTxt": commentData["commentTxt"]!,
+                TIMESTAMP: commentData[TIMESTAMP]!,
+                USERNAME: commentData[USERNAME]!,
+                USER_ID: commentData[USER_ID]!,
+                DOCUMENT_ID: newCommentRef.documentID
+            ]
+            
+            transaction.setData(cData, forDocument: newCommentRef)
             handler(true)
             
             return nil
@@ -153,5 +164,52 @@ class DataService{
                 guard let snap = querySnapShot else {return}
                 handler(self.parseComments(snap: snap))
             })
+    }
+    
+    func deleteComment(uid: String, cid: String, handler: @escaping (_ status: Bool) -> ()){
+        
+        let thoughtRef = REF_BASE.document(uid)
+               
+               FIREBASE_REF.runTransaction({ (transaction, error) -> Any? in
+                   let thoughtDocument: DocumentSnapshot!
+                   
+                   do{
+                       try thoughtDocument = transaction.getDocument(thoughtRef)
+                   }catch{
+                       return nil
+                   }
+                   
+                   guard let oldNumComments = thoughtDocument.data()![NUM_COMMENTS] as? Int else {return nil}
+                   
+                   transaction.updateData([NUM_COMMENTS: oldNumComments - 1], forDocument: thoughtRef)
+
+// below is way to show simple delete function
+                
+//                self.REF_BASE
+//                        .document(uid)  // thoughts / document
+//                        .collection(COMMENTS)  // thoughts / document / comments
+//                        .document(cid)
+//                            .delete { (error) in
+//
+//                                if error != nil{
+//                                    handler(false)
+//                                }else{
+//                                    handler(true)
+//                                }
+//                        }
+                let deleteRef = self.REF_BASE.document(uid).collection(COMMENTS).document(cid)
+                transaction.deleteDocument(deleteRef)
+                
+                   handler(true)
+                   
+                   return nil
+               }) { (object, error) in
+                   
+                   if error != nil{
+                       handler(false)
+                   }else{
+                       handler(true)
+                   }
+               }
     }
 }

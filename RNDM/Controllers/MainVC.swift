@@ -110,7 +110,7 @@ extension MainVc: UITableViewDelegate, UITableViewDataSource{
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThoughtCell", for: indexPath) as? ThoughtCell else { return UITableViewCell() }
         
-        cell.configureCell(thought: thoughtsArr[indexPath.row])
+        cell.configureCell(thought: thoughtsArr[indexPath.row], delegate: self)
         return cell
     }
     
@@ -130,3 +130,11 @@ extension MainVc: UITableViewDelegate, UITableViewDataSource{
     
 }
 
+extension MainVc: ThoughtDelegate{
+    
+    func thoughtOptionTapped(thought: Thought) {
+        // here we handle the alert
+    }
+    
+    
+}
