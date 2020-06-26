@@ -223,6 +223,194 @@
             </objects>
             <point key="canvasLocation" x="1949" y="115"/>
         </scene>
+        <!--LoginVC-->
+        <scene sceneID="K8z-m7-yYO">
+            <objects>
+                <viewController id="nME-lS-RfS" customClass="LoginVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o2l-3D-S3m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AkK-UP-Yic">
+                                <rect key="frame" x="20" y="84" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hbi-6u-laA"/>
+                                </constraints>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5C-8R-jXD">
+                                <rect key="frame" x="20" y="140" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1K7-l9-sIF"/>
+                                </constraints>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3O-aC-jbr">
+                                <rect key="frame" x="152" y="216" width="110" height="33"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="bWz-S2-sXJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="17"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.90961230920000002" green="0.92558275160000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="nME-lS-RfS" eventType="touchUpInside" id="z3u-ac-AyH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNw-DR-hxJ">
+                                <rect key="frame" x="125.5" y="273" width="163" height="20"/>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="16"/>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tG-BA-ydC">
+                                <rect key="frame" x="152" y="301" width="110" height="33"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Rf0-RY-eIw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="17"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpBtnPressed:" destination="nME-lS-RfS" eventType="touchUpInside" id="KHY-8O-wUI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AkK-UP-Yic" firstAttribute="top" secondItem="1hT-kI-Se4" secondAttribute="top" constant="40" id="2dh-YM-fs6"/>
+                            <constraint firstItem="N3O-aC-jbr" firstAttribute="centerX" secondItem="o2l-3D-S3m" secondAttribute="centerX" id="6Yx-tg-mE6"/>
+                            <constraint firstItem="HNw-DR-hxJ" firstAttribute="centerX" secondItem="o2l-3D-S3m" secondAttribute="centerX" id="DkJ-rV-ISy"/>
+                            <constraint firstItem="t5C-8R-jXD" firstAttribute="top" secondItem="AkK-UP-Yic" secondAttribute="bottom" constant="16" id="Ntu-bp-AoW"/>
+                            <constraint firstItem="N3O-aC-jbr" firstAttribute="top" secondItem="t5C-8R-jXD" secondAttribute="bottom" constant="36" id="PF2-7H-boC"/>
+                            <constraint firstItem="2tG-BA-ydC" firstAttribute="top" secondItem="HNw-DR-hxJ" secondAttribute="bottom" constant="8" id="UM3-xT-Hhu"/>
+                            <constraint firstItem="t5C-8R-jXD" firstAttribute="leading" secondItem="1hT-kI-Se4" secondAttribute="leading" constant="20" id="VwF-x0-DRo"/>
+                            <constraint firstItem="2tG-BA-ydC" firstAttribute="centerX" secondItem="o2l-3D-S3m" secondAttribute="centerX" id="W72-Tm-Wxk"/>
+                            <constraint firstItem="HNw-DR-hxJ" firstAttribute="top" secondItem="N3O-aC-jbr" secondAttribute="bottom" constant="24" id="ZLc-bT-Mz1"/>
+                            <constraint firstItem="AkK-UP-Yic" firstAttribute="leading" secondItem="1hT-kI-Se4" secondAttribute="leading" constant="20" id="bgO-dD-54V"/>
+                            <constraint firstItem="1hT-kI-Se4" firstAttribute="trailing" secondItem="AkK-UP-Yic" secondAttribute="trailing" constant="20" id="d18-c9-Pbv"/>
+                            <constraint firstItem="1hT-kI-Se4" firstAttribute="trailing" secondItem="t5C-8R-jXD" secondAttribute="trailing" constant="20" id="iqg-6C-n4K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1hT-kI-Se4"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="N3O-aC-jbr" id="Q9K-7V-S6l"/>
+                        <outlet property="passwordTxtField" destination="t5C-8R-jXD" id="f26-Qp-bM0"/>
+                        <outlet property="signUpBtn" destination="2tG-BA-ydC" id="QTw-b1-dUw"/>
+                        <outlet property="usernameTxtField" destination="AkK-UP-Yic" id="paV-Vu-Gru"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R9k-Nj-x9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1929" y="137"/>
+        </scene>
+        <!--Create AccountVC-->
+        <scene sceneID="eiA-nm-8uG">
+            <objects>
+                <viewController id="055-u0-2RC" customClass="CreateAccountVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hmw-O3-bAc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OVt-TC-9Uo">
+                                <rect key="frame" x="20" y="104" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8ES-6t-yd5"/>
+                                </constraints>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6U5-U0-k3S">
+                                <rect key="frame" x="20" y="160" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mg9-Y1-unt"/>
+                                </constraints>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sd-Nn-CjS">
+                                <rect key="frame" x="152" y="296" width="110" height="33"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="mki-sa-LMd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="17"/>
+                                <state key="normal" title="Create User">
+                                    <color key="titleColor" red="0.90961230920000002" green="0.92558275160000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createUserBtnPressed:" destination="055-u0-2RC" eventType="touchUpInside" id="Oe2-iF-EtW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cM2-1e-EjL">
+                                <rect key="frame" x="152" y="349" width="110" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="2k5-hb-PAh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="17"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.90961230920000002" green="0.92558275160000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtnPressed:" destination="055-u0-2RC" eventType="touchUpInside" id="F1f-6U-jpW"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g7q-Oq-Vme">
+                                <rect key="frame" x="20" y="220" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HSY-z1-UVe"/>
+                                </constraints>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OVt-TC-9Uo" firstAttribute="top" secondItem="aRJ-IN-tQn" secondAttribute="top" constant="60" id="1YG-5N-ytQ"/>
+                            <constraint firstItem="3sd-Nn-CjS" firstAttribute="top" secondItem="g7q-Oq-Vme" secondAttribute="bottom" constant="36" id="4p6-zn-l2E"/>
+                            <constraint firstItem="6U5-U0-k3S" firstAttribute="leading" secondItem="aRJ-IN-tQn" secondAttribute="leading" constant="20" id="5BP-wH-y1G"/>
+                            <constraint firstItem="cM2-1e-EjL" firstAttribute="top" secondItem="3sd-Nn-CjS" secondAttribute="bottom" constant="20" id="GVg-zv-sS9"/>
+                            <constraint firstItem="aRJ-IN-tQn" firstAttribute="trailing" secondItem="OVt-TC-9Uo" secondAttribute="trailing" constant="20" id="IrI-WH-iUg"/>
+                            <constraint firstItem="6U5-U0-k3S" firstAttribute="top" secondItem="OVt-TC-9Uo" secondAttribute="bottom" constant="16" id="Ps8-t0-6DH"/>
+                            <constraint firstItem="OVt-TC-9Uo" firstAttribute="leading" secondItem="aRJ-IN-tQn" secondAttribute="leading" constant="20" id="Xfi-dX-Kka"/>
+                            <constraint firstItem="aRJ-IN-tQn" firstAttribute="trailing" secondItem="6U5-U0-k3S" secondAttribute="trailing" constant="20" id="azU-hy-8jM"/>
+                            <constraint firstItem="g7q-Oq-Vme" firstAttribute="top" secondItem="6U5-U0-k3S" secondAttribute="bottom" constant="20" id="dcZ-bS-3cq"/>
+                            <constraint firstItem="g7q-Oq-Vme" firstAttribute="leading" secondItem="aRJ-IN-tQn" secondAttribute="leading" constant="20" id="hWz-m7-OJ8"/>
+                            <constraint firstItem="3sd-Nn-CjS" firstAttribute="centerX" secondItem="Hmw-O3-bAc" secondAttribute="centerX" id="miB-We-mRe"/>
+                            <constraint firstItem="aRJ-IN-tQn" firstAttribute="trailing" secondItem="g7q-Oq-Vme" secondAttribute="trailing" constant="20" id="oUj-2y-TLu"/>
+                            <constraint firstItem="cM2-1e-EjL" firstAttribute="centerX" secondItem="Hmw-O3-bAc" secondAttribute="centerX" id="rtB-6W-PTC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aRJ-IN-tQn"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="cM2-1e-EjL" id="aiB-ZW-laE"/>
+                        <outlet property="createUserBtn" destination="3sd-Nn-CjS" id="nZk-Jx-Jj3"/>
+                        <outlet property="emailTxtField" destination="OVt-TC-9Uo" id="Kc5-eg-X68"/>
+                        <outlet property="passTxtField" destination="6U5-U0-k3S" id="p6k-9u-fV8"/>
+                        <outlet property="usernameTxtField" destination="g7q-Oq-Vme" id="bgU-Yq-MQG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTw-Gh-Hh9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-910.14492753623199" y="125.89285714285714"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2uc-I6-mVq">
             <objects>
