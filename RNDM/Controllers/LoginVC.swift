@@ -25,6 +25,16 @@ class LoginVC: UIViewController {
     
     
     @IBAction func loginBtnPressed(_ sender: Any) {
+        guard let email = usernameTxtField.text,
+            let pass = passwordTxtField.text else {return}
+        
+        AuthService.instance.loginUser(email: email, pass: pass) { (status) in
+            if status{
+                self.dismiss(animated: true, completion: nil)
+            }else{
+                print("error creating account")
+            }
+        }
     }
     
     @IBAction func signUpBtnPressed(_ sender: Any) {

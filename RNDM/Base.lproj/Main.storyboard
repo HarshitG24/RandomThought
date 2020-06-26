@@ -122,6 +122,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Random" id="Gun-QG-Dhu">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="NqD-UA-Jzv">
+                            <connections>
+                                <action selector="logoutUser:" destination="BYZ-38-t0r" id="2jX-j5-vMM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="addThoughtIcon" id="A0o-qK-jUD">
                             <connections>
                                 <segue destination="gqH-Qq-BXf" kind="show" id="O40-d3-PFG"/>
@@ -226,7 +231,7 @@
         <!--LoginVC-->
         <scene sceneID="K8z-m7-yYO">
             <objects>
-                <viewController id="nME-lS-RfS" customClass="LoginVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="nME-lS-RfS" customClass="LoginVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o2l-3D-S3m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +244,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t5C-8R-jXD">
                                 <rect key="frame" x="20" y="140" width="374" height="40"/>
@@ -249,7 +254,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3O-aC-jbr">
                                 <rect key="frame" x="152" y="216" width="110" height="33"/>
@@ -282,7 +287,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpBtnPressed:" destination="nME-lS-RfS" eventType="touchUpInside" id="KHY-8O-wUI"/>
+                                    <segue destination="055-u0-2RC" kind="presentation" modalPresentationStyle="fullScreen" id="dOZ-XF-lMi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -399,6 +404,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aRJ-IN-tQn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="psH-of-DAI"/>
                     <connections>
                         <outlet property="cancelBtn" destination="cM2-1e-EjL" id="aiB-ZW-laE"/>
                         <outlet property="createUserBtn" destination="3sd-Nn-CjS" id="nZk-Jx-Jj3"/>

@@ -25,12 +25,23 @@ class MainVc: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setListeners()
+        AuthService.instance.authActionListener { (status) in
+            if status{
+                self.setListeners()  // user is logged in
+            }else{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVc = storyboard.instantiateViewController(identifier: "LoginVC")
+                loginVc.modalPresentationStyle = .fullScreen
+                self.present(loginVc, animated: true, completion: nil)
+            }
+        }
     }
     
     // good practise to remove listener when we are not using it
     override func viewWillDisappear(_ animated: Bool) {
-        DataService.instance.removeListener()
+        if DataService.instance.ACTION_LISTENER != nil{
+            DataService.instance.removeListener()
+        }
     }
     
     func setListeners(){
@@ -81,6 +92,12 @@ class MainVc: UIViewController {
         DataService.instance.removeListener() // to avoid multiple listeners
         Categories.popular.rawValue == self.categorySelected ? getPopularThoughts() : setListeners()
     }
+    
+    
+    @IBAction func logoutUser(_ sender: Any) {
+        AuthService.instance.logoutUser()
+    }
+    
 }
 
 extension MainVc: UITableViewDelegate, UITableViewDataSource{
