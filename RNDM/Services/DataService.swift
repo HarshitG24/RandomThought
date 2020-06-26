@@ -212,4 +212,19 @@ class DataService{
                    }
                }
     }
+    
+    func updateComment(comment: Comment, thought: Thought, txt: String, handler: @escaping (_ status: Bool) -> ()){
+        
+        REF_BASE
+            .document(thought.docuemntId)
+            .collection(COMMENTS)
+            .document(comment.documentId)
+            .setData(["commentTxt": txt], merge: true) { (error) in
+                if error != nil{
+                    handler(false) // failure in updating
+                }else{
+                    handler(true)  // success in updating
+                }
+        }
+    }
 }

@@ -300,11 +300,65 @@
                         <outlet property="commentsTV" destination="7Gw-zi-yIL" id="Dc0-y9-bS5"/>
                         <outlet property="keyboardView" destination="6o2-be-WCK" id="3tY-3k-ZhX"/>
                         <outlet property="sendComment" destination="q8q-vo-ciz" id="LRL-so-DOe"/>
+                        <segue destination="Brt-Sz-Ox0" kind="show" identifier="editComment" id="9cy-Ib-ODD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gll-4H-SUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1986.9565217391305" y="488.83928571428567"/>
+        </scene>
+        <!--Update CommentVC-->
+        <scene sceneID="AvR-Vu-dxP">
+            <objects>
+                <viewController id="Brt-Sz-Ox0" customClass="UpdateCommentVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="js8-ff-c69">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="abc" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OKv-jA-YoQ">
+                                <rect key="frame" x="20" y="108" width="374" height="190"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="lao-Gq-tkG"/>
+                                </constraints>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Baa-z2-kMO">
+                                <rect key="frame" x="167" y="334" width="80" height="33"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="u4N-RW-hgY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="17"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateBtnPressed:" destination="Brt-Sz-Ox0" eventType="touchUpInside" id="J3R-n0-VAd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OKv-jA-YoQ" firstAttribute="leading" secondItem="Qhq-hl-nlM" secondAttribute="leading" constant="20" id="Q3x-2J-ahN"/>
+                            <constraint firstItem="Baa-z2-kMO" firstAttribute="top" secondItem="OKv-jA-YoQ" secondAttribute="bottom" constant="36" id="TsK-4v-pjH"/>
+                            <constraint firstItem="Baa-z2-kMO" firstAttribute="centerX" secondItem="js8-ff-c69" secondAttribute="centerX" id="mOF-FQ-g1f"/>
+                            <constraint firstItem="Qhq-hl-nlM" firstAttribute="trailing" secondItem="OKv-jA-YoQ" secondAttribute="trailing" constant="20" id="oWZ-33-Xnx"/>
+                            <constraint firstItem="OKv-jA-YoQ" firstAttribute="top" secondItem="Qhq-hl-nlM" secondAttribute="top" constant="20" id="x1O-sG-mzR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qhq-hl-nlM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kNB-XL-UIb"/>
+                    <connections>
+                        <outlet property="updateBtn" destination="Baa-z2-kMO" id="QBN-5e-Bjr"/>
+                        <outlet property="userComment" destination="OKv-jA-YoQ" id="AGE-PK-zTK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PMb-du-WtT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2856.521739130435" y="486.83035714285711"/>
         </scene>
         <!--Add ThoughtVC-->
         <scene sceneID="ubx-fH-oSh">
