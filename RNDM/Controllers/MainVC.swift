@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainVc: UIViewController {
 
@@ -127,14 +128,95 @@ extension MainVc: UITableViewDelegate, UITableViewDataSource{
             }
         }
     }
-    
 }
 
 extension MainVc: ThoughtDelegate{
     
     func thoughtOptionTapped(thought: Thought) {
         // here we handle the alert
+       
+        let alert = UIAlertController(title: "Delete Though", message: "you can delete a comment", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete Comment", style: .default) { (action) in
+            // here we will perform the delete action
+            
+            self.delete(collection: Firestore.firestore().collection("thoughts").document(thought.docuemntId).collection(COMMENTS)) { (error) in
+                
+                if let err = error{
+                    debugPrint(err.localizedDescription)
+                }else{
+                    // delete of sub collection was successful
+                    DataService.instance.deleteThought(uid: thought.docuemntId) { (status) in
+                        
+                        if status {
+                            print("success")
+                        }else{
+                            print("failure")
+                        }
+                    }
+                }
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
+    
+    
+    func delete(collection: CollectionReference, batchSize: Int = 100, completion: @escaping (Error?) -> ()) {
+
+           //Limit query to avoid out-of-memory errors on large collections.
+
+           //When deleting a collection guaranteed to fit in memory, batching can be avoided entirely.
+
+           collection.limit(to: batchSize).getDocuments { (docset, error) in
+
+               // An error occured.
+
+               guard let docset = docset else {
+
+                   completion(error)
+
+                   return
+
+               }
+
+               //There's nothing to delete.
+
+               guard docset.count > 0 else {
+
+                   completion(nil)
+
+                   return
+
+               }
+            let batch = collection.firestore.batch()
+
+               docset.documents.forEach { batch.deleteDocument($0.reference) }
+               batch.commit { (batchError) in
+
+                   if let batchError = batchError {
+
+                       // Stop the deletion process and handle the error. Some elements
+
+                       // may have been deleted.
+
+                       completion(batchError)
+
+                   } else {
+
+                       self.delete(collection: collection, batchSize: batchSize, completion: completion)
+
+                   }
+
+               }
+
+           }
+
+       }
     
     
 }

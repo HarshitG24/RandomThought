@@ -227,4 +227,15 @@ class DataService{
                 }
         }
     }
+    
+    func deleteThought(uid: String, handler: @escaping (_ status: Bool) -> ()){
+        REF_BASE.document(uid).delete { (error) in
+            
+            if error !=  nil{
+                handler(false)
+            }else{
+                handler(true)
+            }
+        }
+    }
 }
